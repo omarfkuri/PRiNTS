@@ -1,0 +1,340 @@
+<style>
+header, footer, #demo, #rover-list {
+	display: none!important;
+}
+</style>
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link rel="stylesheet" href="styles/loading.css">
+	<link rel="stylesheet" href="styles/slid.css">
+	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/cube.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="//db.onlinewebfonts.com/c/331ec49c0d78e469c42c1d814dd45838?family=Avenir+Book" rel="stylesheet" type="text/css"/>
+	<meta charset="utf-8">
+<style>
+
+</style>
+</head>
+<body>
+	<div class="topnav">
+		<a href="#" onclick="location.reload()">Reiniciar</a>
+		<a href="#" onclick="history.back()">Regresar</a>
+		<a class="active" href="#" onclick="location.reload()">Model</a>
+	</div>
+	<div id="Preview-Box">
+		<div id="bod" class="scene" >
+			<div id="product-soul" ondblclick="positionCube(0,0)">
+				<div id="great-ruler">
+					<hr>
+					<p>
+						50cm ⠀
+					</p>
+				</div>
+				<div id="prod" class=" cube-box" > <!-- cube -->
+					<div id="canvas-container" class="canvas-layer cube__face cube__face--front basic-flex">
+						<div id="canvas-layer-eight" class="canvas-layer">
+							<div id="canvas-layer-seven" class="canvas-layer">
+								<div id="canvas-layer-six" class="canvas-layer">
+									<div id="canvas-layer-five" class="canvas-layer">
+										<div id="canvas-layer-four" class="canvas-layer">
+											<div id="canvas-layer-three" class="canvas-layer">
+												<div id="canvas-layer-two" class="canvas-layer">
+													<div id="canvas-layer-one" class="canvas-layer">
+														<div id="canvas-layer-zero" class="canvas-layer">
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="cube__face cube__face--front-hiper"></div>
+					<div class="cube__face cube__face--back"></div>
+					<div class="cube__face cube__face--inner cube__face--right-inner"></div>
+					<div class="cube__face cube__face--right"></div>
+					<div class="cube__face cube__face--inner cube__face--left-inner"></div>
+					<div class="cube__face cube__face--left"></div>
+					<div class="cube__face cube__face--inner cube__face--top-inner"></div>
+					<div class="cube__face cube__face--top"></div>
+					<div class="cube__face cube__face--inner cube__face--bottom-inner"></div>
+					<div class="cube__face cube__face--bottom"></div>
+					<div class="cube__face cube__face--shadow"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<form method="get">
+		
+		<div id="Navigator-Box">
+			<div id="initial-control" class="upper-tabcontent">
+				<i class="material-icons" onclick="clickThis('#loader')">upload</i>
+				<i class="material-icons" onclick="clickThis('input[name=reset]')">cached</i>
+			</div>
+			<div id="Fit" class="upper-tabcontent">
+				<i class="material-icons" onclick="clickThis('input[name=middle]')">fullscreen_exit</i>
+				<i class="material-icons" onclick="clickThis('input[name=fit]')">fullscreen</i>
+				<i class="material-icons" onclick="clickThis('input[name=repeat]'), toggleClass(this,'changed')">apps</i>
+				<i id="flipX-button" class="material-icons">flip</i>
+				<i id="flipY-button" class="material-icons rotated">flip</i>
+				<input type="checkbox" id="repeat-checker"  name="repeat" hidden="">
+				<input type="checkbox" id="fit-checker"  name="fit" hidden="">
+				<input type="checkbox" id="middle-checker"  name="middle" hidden="">
+				<input type="checkbox" id="flipX-checker"  name="flipX" hidden="">
+				<input type="checkbox" id="flipY-checker"  name="flipY" hidden="">
+			</div>
+			<div id="Montaje" class="tabcontent">
+				<div id="Marco" class="sub-tabcontent">			
+					<div class="upper">
+						<input type="checkbox" name="marco-hue-checkbox" id="marco-hue-check">
+						<span id="marco-hue-output" class="output"></span>
+					</div>
+					<input type="range" name="marco-hue" id="marco-hue" class="color-slider tiny">			
+					<div class="upper">
+						<input type="checkbox" name="marco-sat-checkbox" id="marco-sat-check">
+						<span id="marco-sat-output" class="output"></span>
+					</div>
+					<input type="range" name="marco-sat" id="marco-sat" class="tiny">			
+					<div class="upper">
+						<input type="checkbox" name="marco-lig-checkbox" id="marco-lig-check">
+						<span id="marco-lig-output" class="output"></span>
+					</div>
+					<input type="range" name="marco-lig" id="marco-lig" class="tiny">
+				</div>
+				<div id="Acrilico" class="sub-tabcontent">	
+					<div class="div-guide">	
+						<i class="material-icons ">stop</i>			
+						<i class="material-icons ">view_column</i>
+						<i class="material-icons ">view_array</i>
+						<i class="material-icons ">view_module</i>
+						<i class="material-icons ">view_compact</i>
+						<i class="material-icons ">circle</i>
+						<i class="material-icons ">pie_chart</i>
+					</div>
+				</div>
+				<div class="div-guide">
+					<div class="sub-tablink" onclick="openTab('Marco', this, 'sub-tabcontent','sub-tablink'),clickThis('#inner-defaultOpen0')" id="sub-defaultOpen1">Marco
+						<i class="material-icons">crop_original</i>
+					</div>
+					<div class="sub-tablink" onclick="openTab('Acrilico', this, 'sub-tabcontent','sub-tablink'),clickThis('#inner-defaultOpen0')">Acrílico
+						<i class="material-icons">texture</i>
+					</div>
+				</div>
+			</div>
+			<div id="Efectos" class="tabcontent">
+				<div id="Hue" class="sub-tabcontent">		
+					<div class="upper">
+						<input type="checkbox" name="hue-checkbox" id="hue-check">
+						<span id="hue-output" class="output"></span>
+					</div>
+					<input class="colored-slider" type="range" name="hue-range" id="hue-range" min="-180" max="180" value="0" step="0.1">
+				</div>
+				<div id="Contrast" class="sub-tabcontent">			
+					<div class="upper">
+						<input type="checkbox" name="contrast-checkbox" id="contrast-check">
+						<span id="contrast-output" class="output"></span>
+					</div>
+					<input type="range" name="contrast-range" id="contrast-range" min="0" max="300" value="100" step="0.5">
+				</div>
+				<div id="Brightness" class="sub-tabcontent">			
+					<div class="upper">
+						<input type="checkbox" name="brightness-checkbox" id="brightness-check">
+						<span id="brightness-output" class="output"></span>
+					</div>
+					<input type="range" name="brightness-range" id="brightness-range" min="0" max="300" value="100" step="0.5">
+				</div>
+				<div id="Saturation" class="sub-tabcontent">			
+					<div class="upper">
+						<input type="checkbox" name="saturate-checkbox" id="saturate-check">
+						<span id="saturate-output" class="output"></span>
+					</div>
+					<input type="range" name="saturate-range" id="saturate-range" min="0" max="300" value="100" step="0.5">
+				</div>
+				<div id="Invert" class="sub-tabcontent">			
+					<div class="upper">
+						<input type="checkbox" name="invert-checkbox" id="invert-check">
+						<span id="invert-output" class="output"></span>
+					</div>
+					<input type="range" name="invert-range" id="invert-range" min="0" max="100"	value="0" step="0.1">
+				</div>
+				<div id="Grayscale" class="sub-tabcontent">			
+					<div class="upper">
+						<input type="checkbox" name="grayscale-checkbox" id="grayscale-check">
+						<span id="grayscale-output" class="output"></span>
+					</div>
+					<input type="range" name="grayscale-range" id="grayscale-range" min="0" max="100"	value="0" step="0.1">
+				</div>
+				<div id="Sepia" class="sub-tabcontent">			
+					<div class="upper">
+						<input type="checkbox" name="sepia-checkbox" id="sepia-check">
+						<span id="sepia-output" class="output"></span>
+					</div>
+					<input type="range" name="sepia-range" id="sepia-range" min="0" max="300" value="0" step="0.5">
+				</div>
+				<div id="Blur" class="sub-tabcontent">			
+					<div class="upper">
+						<input type="checkbox" name="blur-checkbox" id="blur-check">
+						<span id="blur-output" class="output"></span>
+					</div>
+					<input type="range" name="blur-range" id="blur-range" min="0" max="50" value="0" step="0.5">
+				</div>
+				<div class="div-guide">
+					<div class="sub-tablink" onclick="openTab('Hue', this, 'sub-tabcontent','sub-tablink')" id="sub-defaultOpen2">Matíz
+						<i class="material-icons color-text">lens</i>
+					</div>
+					<div class="sub-tablink" onclick="openTab('Contrast', this, 'sub-tabcontent','sub-tablink')">Contraste
+						<i class="material-icons">tonality</i>
+					</div>
+					<div class="sub-tablink" onclick="openTab('Brightness', this, 'sub-tabcontent','sub-tablink')">Brillo
+						<i class="material-icons">wb_sunny</i>
+					</div>
+					<div class="sub-tablink" onclick="openTab('Saturation', this, 'sub-tabcontent','sub-tablink')">Saturación
+						<i class="material-icons">looks</i>
+					</div>
+					<div class="sub-tablink" onclick="openTab('Invert', this, 'sub-tabcontent','sub-tablink')">Invertir
+						<i class="material-icons">iso</i>
+					</div>
+					<div class="sub-tablink" onclick="openTab('Grayscale', this, 'sub-tabcontent','sub-tablink')">Grises
+						<i class="material-icons">gradient</i>
+					</div>
+					<div class="sub-tablink" onclick="openTab('Sepia', this, 'sub-tabcontent','sub-tablink')">Sepia
+						<i class="material-icons">filter_vintage</i>
+					</div>
+					<div class="sub-tablink" onclick="openTab('Blur', this, 'sub-tabcontent','sub-tablink')">Blur
+						<i class="material-icons">blur_on</i>
+					</div>
+				</div>
+
+
+			</div>
+			<div id="Imagen" class="tabcontent">
+				<div id="Preview-X" class="sub-tabcontent">			
+					<div class="upper">
+						<input type="checkbox" name="preview-x-range-checkbox" id="preview-x-range-check">
+						<span id="preview-x-range-output" class="output"></span>
+					</div>
+					<input type="range" id="preview-x-range" name="preview-x" min="-40" max="40" value="0" step="1">	
+				</div>
+				<div id="Zoom" class="sub-tabcontent">			
+					<div class="upper">
+						<input type="checkbox" name="zoom-range-checkbox" id="zoom-range-check">
+						<span id="zoom-range-output" class="output"></span>
+					</div>
+					<input type="range" id="zoom-range" name="zoom" min="1" max="99" value="50" step="1">	
+				</div>
+				<div id="Rotate" class="sub-tabcontent">				
+					<div class="upper">
+						<input type="checkbox" name="rotate-range-checkbox" id="rotate-range-check">
+						<span id="rotate-range-output" class="output"></span>
+					</div>
+					<input type="range" id="rotate-range" name="rotate" min="-180" max="180" value="0" step="1">
+				</div>
+				<div id="Position" class="sub-tabcontent multi-tab">
+					<div id="Position-X" class="multi-slide">
+						<div class="upper">
+							<input type="checkbox" name="posX-range-checkbox" id="posX-range-check">
+							<span id="posX-range-output" class="output"></span>
+						</div>
+						<input type="range" id="posX-range" name="posX" min="-100" max="200" value="50" step="5" class="tiny">
+					</div>
+					<div id="Position-Y" class="multi-slide">
+						<div class="upper">
+							<input type="checkbox" name="posY-range-checkbox" id="posY-range-check">
+							<span id="posY-range-output" class="output"></span>
+						</div>
+						<input type="range" id="posY-range" name="posY" min="-99" max="201" value="51" step="5" class="tiny">
+					</div>
+				</div>
+				<div id="Preview-Zoom" class="sub-tabcontent">			
+					<div class="upper">
+						<input type="checkbox" name="zoom-preview-checkbox" id="zoom-preview-check">
+						<span id="zoom-preview-output" class="output"></span>
+					</div>
+					<input type="range" name="zoom-preview" id="zoom-preview"min="0.2" max="1" step="0.1">
+				</div>
+				<div id="Aspect" class="sub-tabcontent">			
+					<div class="upper">
+						<input type="checkbox" name="grow-range-checkbox" id="grow-range-check">
+						<span id="grow-range-output" class="output"></span>
+					</div>
+					<input type="range" id="grow-range" name="grow-range" min="200" max="600" value="300" step="50" class="slider" oninput="growWidth(this.value)">
+				</div>
+				<div id="Maria-Luisa" class="sub-tabcontent">			
+					<div class="upper">
+						<input type="checkbox" name="Maria-Luisa-range-checkbox" id="Maria-Luisa-range-check">
+						<span id="Maria-Luisa-range-output" class="output"></span>
+					</div>
+					<input type="range" id="Maria-Luisa-range" name="Maria-Luisa-range" min="10" max="80" value="45" step="2.5" class="slider ">
+				</div>
+				<div id="Background" class="sub-tabcontent multi-tab">	
+					<div id="Background-Hue" class="multi-slide">			
+						<div class="upper">
+							<input type="checkbox" name="hue-slider-checkbox" id="hue-slider-check">
+							<span id="hue-slider-output" class="output"></span>
+						</div>
+						<input type="range" id="hue-slider" name="frame-hue" min="0" max="360" value="0" step="1" class="color-slider tiny">			
+					</div>
+					<div id="Background-Sat" class="multi-slide">			
+						<div class="upper">
+							<input type="checkbox" name="saturation-slider-checkbox" id="saturation-slider-check">
+							<span id="saturation-slider-output" class="output"></span>
+						</div>
+						<input type="range" id="saturation-slider" name="frame-saturation" min="0" max="100" value="50" step="1" class="saturation-slider tiny ">			
+					</div>
+					<div id="Background-Lig"  class="multi-slide">			
+						<div class="upper">
+							<input type="checkbox" name="lightness-slider-checkbox" id="lightness-slider-check">
+							<span id="lightness-slider-output" class="output"></span>
+						</div>
+						<input type="range" id="lightness-slider" name="frame-lightness" min="0" max="100" value="50" step="1" class="grays-slider tiny">
+					</div>
+				</div>
+				<div class="div-guide">
+					<div class="sub-tablink" onclick="openTab('Preview-X', this, 'sub-tabcontent','sub-tablink')" id="sub-defaultOpen3">Girar
+						<i class="material-icons rotated">unfold_more</i>
+					</div>
+					<div class="sub-tablink" onclick="openTab('Preview-Zoom', this, 'sub-tabcontent','sub-tablink')">Zoom
+						<i class="material-icons">zoom_in</i>
+					</div>
+					<div class="sub-tablink" onclick="openTab('Rotate', this, 'sub-tabcontent','sub-tablink')">Rotate
+						<i class="material-icons">history</i>
+					</div>
+					<div class="sub-tablink" onclick="openTab('Zoom', this, 'sub-tabcontent','sub-tablink')" id="sub-defaultOpen0">Ajustar
+						<i class="material-icons">photo_size_select_large</i>
+					</div>
+					<div class="sub-tablink" onclick="openTab('Position', this, 'sub-tabcontent','sub-tablink')">Posición
+						<i class="material-icons">blur_linear</i>
+					</div>
+					<div class="sub-tablink" onclick="openTab('Aspect', this, 'sub-tabcontent','sub-tablink')">Ancho
+						<i class="material-icons">burst_mode</i>
+					</div>
+					<div class="sub-tablink" onclick="openTab('Maria-Luisa', this, 'sub-tabcontent','sub-tablink')">Maria Luisa
+						<i class="material-icons">select_all</i>
+					</div>
+					<div class="sub-tablink" onclick="openTab('Background', this, 'sub-tabcontent','sub-tablink')">Fondo
+						<i class="material-icons">border_clear</i>
+					</div>
+				</div>
+				<input type="file" name="file" id="loader" onchange="renderImage('#canvas-layer-zero', this)" hidden="">
+			</div>
+			<div class="div-guide">
+				<div class="tablink material-icons" onclick="openTab('Montaje', this, 'tabcontent','tablink'),clickThis('#sub-defaultOpen1')">check_box_outline_blank</div>
+				<div class="tablink material-icons" onclick="openTab('Efectos', this, 'tabcontent','tablink'),clickThis('#sub-defaultOpen2')">tune</div>
+				<div class="tablink material-icons" onclick="openTab('Imagen', this, 'tabcontent','tablink'),clickThis('#sub-defaultOpen3')" id="defaultOpen">photo</div>
+			</div>
+		</div>
+		<input type="reset" name="reset" hidden="">
+		<input type="submit" name="submit" hidden="">
+	</form>
+
+</body>
+<script>
+
+</script>
+<script type="text/javascript" src="script.js"></script>
+</html>
