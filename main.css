@@ -241,6 +241,7 @@ i.rotated {
 	height: 300px;
 }
 #canvas-layer-two {
+	overflow: hidden;
 }
 #canvas-layer-one {
 	position: absolute;
