@@ -1,0 +1,120 @@
+
+.cube-box {
+	width: 300px;
+	height: 300px;
+	position: relative;
+	margin-left: 0px;
+	margin-top: 0px;
+	transform-style: preserve-3d;
+	transition: transform 1s;
+ 
+}
+.selected {
+	border-bottom: 10px solid lightgray!important;
+}
+.selected:after {
+	content:"doble click para parar";
+	position: absolute;
+	bottom: -20px;
+}
+#product-soul {
+	padding-bottom: 10%;
+	width: 300px;
+}
+
+.cube__face {
+	position: absolute;
+	border: 5px solid hsl(0, 0%, 0%);
+	font-size: 40px;
+	font-weight: bold;
+	color: white;
+	text-align: center;
+	background: hsl(0, 0%, 3%);
+}
+
+.cube__face--front  { 
+	transform: rotateY(0deg) translateZ(153px) translateY(5px) translateX(0px); 
+	width: 300px;
+	height: 295px;
+}
+
+.cube__face--back   { 
+	transform: rotateY(180deg) translateZ(-150px) translateX(0px); 
+	width: 300px;
+	height: 300px;
+}
+
+
+.cube__face--front-hiper  { 
+	transform: rotateY(0deg) translateZ(160px) translateX(0px); 
+	width: 270px;
+	height: 270px;
+	background-color: transparent;
+	border: 20px solid hsl(0, 0%, 0%);
+}
+
+
+.cube__face--right  { 
+	transform: rotateY( 90deg) translateZ(300px) translateX(-150px); 
+	width: 10px;
+	height: 300px;
+}
+.cube__face--left   { 
+	transform: rotateY(-90deg) translateZ(10px) translateX(150px); 
+	width: 10px;
+	height: 300px;
+}
+
+.cube__face--bottom  { 
+	transform: rotateX( 90deg) translateZ(-300px) translateY(150px); 
+	height: 10px;
+	width: 300px;
+}
+.cube__face--top   { 
+	transform: rotateX(-90deg) translateZ(-10px) translateY(-150px); 
+	height: 10px;
+	width: 300px;
+}
+
+.cube__face--inner  { 
+	border: none;
+}	
+.cube__face--right-inner  { 
+	transform: rotateY( 90deg) translateZ(287px) translateX(-155px) translateY(5px); 
+	width: 10px;
+	height: 300px;
+	background-color: hsl(0, 0%, 32%);
+}
+.cube__face--left-inner   { 
+	transform: rotateY(-90deg) translateZ(-15px) translateX(155px) translateY(5px); 
+	width: 10px;
+	height: 300px;
+	background-color: hsl(0, 0%, 32%);
+}
+
+
+.cube__face--bottom-inner  { 
+	transform: rotateX( 90deg) translateZ(-279px) translateY(155px) translateZ(-6px); 
+	height: 10px;
+	width: 300px;
+	background-color: hsl(0, 0%, 50%);
+}
+
+.cube__face--top-inner   { 
+	transform: rotateX(-90deg) translateZ(15px) translateY(-155px) translateZ(0px); 
+	height: 10px;
+	width: 300px;
+	background-color: hsl(0, 0%, 21%);
+}
+
+
+.cube__face--shadow  { 
+	transform: rotateX( -140deg) translateZ(320px) translateX(20px) translateY(-240px); 
+	height: 40px;
+	margin-top: -50px;
+	width: ;
+	background-color: hsla(0, 0%, 0%, 0.4);
+	filter: blur(50px);
+}
+
+label { margin-right: 10px; }
