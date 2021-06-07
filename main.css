@@ -171,12 +171,6 @@ div.sub-tablink i {
 .file-box:hover {
 	opacity: 0.2;
 }
-#Preview-Box {
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-start;
-	align-items: center;
-}
 #Navigator-Box {
 	position: fixed;
 	bottom: 0;
@@ -226,6 +220,13 @@ div#great-ruler hr {
 i.rotated {
 	transform: rotate(90deg);
 }
+/*  Start of cube */
+#Preview-Box {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+}
 #bod {
 	perspective: 1180px;
 	/* -------- perspective*/
@@ -233,6 +234,7 @@ i.rotated {
 	transform: scale(0.5) translateY(-200px) translateX(-100px);
 	z-index: 9;
 	cursor: pointer;
+	overflow: hidden;
 }
 .canvas-layer {
 	width: 300px;
