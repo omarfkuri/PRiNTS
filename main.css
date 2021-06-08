@@ -6,7 +6,7 @@
 		font-family: Avenir Book;
 		margin:  0;		
 		color: black;
-		cursor: grab;
+		cursor: copy;
 	}
 	#Preview-Box {
 		height: 60%;
