@@ -8,6 +8,78 @@
 		color: black;
 		cursor: grab;
 	}
+	#Preview-Box {
+		height: 60%;
+	}
+	figure {
+		height: 500px;
+	}
+#bod {
+		display: flex;
+		justify-content: flex-start;
+		align-items: flex-start;
+		perspective: 1180px;
+		/* -------- perspective*/
+		margin: 0;
+		transform: scale(0.4);
+		position: fixed;
+		top: -40px;
+		left: -20px;
+		z-index: 9;
+		cursor: pointer;
+	}
+	.canvas-layer {
+		width:300px;
+		height:300px;
+	}
+	#canvas-layer-two {
+
+	}
+	#canvas-layer-one {
+		position: absolute;
+		top: -5px;
+		left: 0;
+		outline: 300px solid white;
+		outline-offset: var(--outline-offset, -30px);
+		width:310px;
+		height:310px;
+	}
+
+	#canvas-layer-zero {
+		position: relative;
+		overflow: hidden;
+
+	}
+	#canvas-layer-zero::before {
+		content: "";
+		position: absolute;
+		width: var(--per-width, 200%);
+		height: 200%;
+		top: -50% ;
+		left: -50%;
+		z-index: -1;
+		background: var(--background, url('fotos/Abetos.png'));
+		background-size: var(--background-size, 45%);
+		background-position: var(--background-x, 50%) var(--background-y, 51%);
+		transform: var(--rotate-Z, rotate(0deg)) rotateX(0deg) rotateY(0deg);
+		background-repeat: no-repeat;
+		filter:  var(--hue-rotate, hue-rotate(0deg)) var(--contrast, contrast(100%)) var(--brightness, brightness(100%)) var(--saturate, saturate(100%)) var(--invert, invert(0%)) var(--grayscale, grayscale(0%)) var(--sepia, sepia(0%)) var(--blur, blur(0px));
+
+	}
+
+	#canvas-container {
+		overflow: hidden;
+		background-color: hsl(190deg, 50%, 50%);
+		opacity: 1;
+		border: none;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	#canvas-layer-zero.repetirlo::before {
+		background-repeat: repeat!important;
+	}
 	.upper {
 		width: 20px;
 		text-align: right;
@@ -173,12 +245,6 @@
 	.file-box:hover {
 		opacity:  0.2;
 	}
-	#Preview-Box {
-		height: 60%;
-	}
-	figure {
-		height: 500px;
-	}
 	#Navigator-Box {
 		position:  fixed;
 		bottom:  0;
@@ -228,58 +294,7 @@
 	i.rotated {
 		transform: rotate(90deg);
 	}
-	#bod {
-		display: flex;
-		justify-content: flex-start;
-		align-items: flex-start;
-		perspective: 1180px;
-		/* -------- perspective*/
-		margin: 0;
-		transform: scale(0.4);
-		position: fixed;
-		top: -40px;
-		left: -20px;
-		z-index: 9;
-		cursor: pointer;
-	}
-	.canvas-layer {
-		width:300px;
-		height:300px;
-	}
-	#canvas-layer-two {
-
-	}
-	#canvas-layer-one {
-		position: absolute;
-		top: -5px;
-		left: 0;
-		outline: 300px solid white;
-		outline-offset: var(--outline-offset, -30px);
-		width:310px;
-		height:310px;
-	}
-
-	#canvas-layer-zero {
-		position: relative;
-		overflow: hidden;
-
-	}
-	#canvas-layer-zero::before {
-		content: "";
-		position: absolute;
-		width: var(--per-width, 200%);
-		height: 200%;
-		top: -50% ;
-		left: -50%;
-		z-index: -1;
-		background: var(--background, url('fotos/Abetos.png'));
-		background-size: var(--background-size, 45%);
-		background-position: var(--background-x, 50%) var(--background-y, 51%);
-		transform: var(--rotate-Z, rotate(0deg)) rotateX(0deg) rotateY(0deg);
-		background-repeat: no-repeat;
-		filter:  var(--hue-rotate, hue-rotate(0deg)) var(--contrast, contrast(100%)) var(--brightness, brightness(100%)) var(--saturate, saturate(100%)) var(--invert, invert(0%)) var(--grayscale, grayscale(0%)) var(--sepia, sepia(0%)) var(--blur, blur(0px));
-
-	}
+	
 
 	.flip-y {
 		transform: rotateX(180deg)!important;
@@ -288,20 +303,6 @@
 	.flip-x::before {
 		transform: var(--rotate-Z, rotate(0deg)) rotateX(0deg) rotateY(180deg)!important;
 	}
-	#canvas-container {
-		overflow: hidden;
-		background-color: hsl(0deg, 50%, 50%);
-		opacity: 1;
-		border: none;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-
-	#canvas-layer-zero.repetirlo::before {
-		background-repeat: repeat!important;
-	}
-
 	.output {
 		text-align: center;
 		width:  50px;
